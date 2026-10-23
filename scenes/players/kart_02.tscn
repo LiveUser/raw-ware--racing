@@ -222,6 +222,7 @@ size = Vector3(1, 0.13432312, 1)
 
 [node name="Kart-02" type="CharacterBody3D" unique_id=570448489]
 script = ExtResource("1_hplm2")
+player_number = 2
 
 [node name="kart-oodi" type="MeshInstance3D" parent="." unique_id=1574028645]
 mesh = SubResource("ArrayMesh_13wrd")

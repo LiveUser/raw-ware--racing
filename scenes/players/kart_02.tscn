@@ -217,6 +217,9 @@ shadow_mesh = SubResource("ArrayMesh_frkv1")
 radius = 0.4892578
 height = 1.3286133
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hplm2"]
+size = Vector3(1, 0.13432312, 1)
+
 [node name="Kart-02" type="CharacterBody3D" unique_id=570448489]
 script = ExtResource("1_hplm2")
 
@@ -251,3 +254,9 @@ shape = SubResource("CapsuleShape3D_hplm2")
 
 [node name="Camera3D" type="Camera3D" parent="CamPivot" unique_id=870032700]
 transform = Transform3D(-1, 1.7763568e-15, 8.742277e-08, 4.3711385e-08, 0.86602545, 0.5, -7.571034e-08, 0.5, -0.86602545, 0, 3.1134007, -2.9306023)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1759536432]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=319443864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.067726135, 0)
+shape = SubResource("BoxShape3D_hplm2")

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cukr12g1pbrv2"]
+
+[ext_resource type="PackedScene" uid="uid://dm8kkwubo14fo" path="res://imports/roads/sign-highway.glb" id="1_1xlgv"]
+[ext_resource type="Script" uid="uid://cjc48sac0dbrm" path="res://scripts/finish_line.gd" id="1_88a8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfvwa"]
+size = Vector3(0.0715332, 0.71203613, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tfvwa"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1xlgv"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="FinishLine" type="Node3D" unique_id=1949874835]
+script = ExtResource("1_88a8h")
+
+[node name="sign-highway2" parent="." unique_id=1228636687 instance=ExtResource("1_1xlgv")]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1153595317]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -0.042098105, 0.5923745, 0)
+pixel_size = 0.004
+text = "Finish Line"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1332753866]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=999972977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0037841797, 0.35357666, 0)
+shape = SubResource("BoxShape3D_tfvwa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1731482684]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=971474771]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.97804874, 0.7581564, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1305823745]
+offset_right = 1920.0
+offset_bottom = 1080.0
+text = "Player 1 Won"
+label_settings = SubResource("LabelSettings_tfvwa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=118211848]
+offset_top = 540.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+text = "A=Replay B=Back"
+label_settings = SubResource("LabelSettings_1xlgv")
+horizontal_alignment = 1
+vertical_alignment = 1

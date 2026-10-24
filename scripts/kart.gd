@@ -27,40 +27,48 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton or event is InputEventJoypadMotion:
 		var controller_num:int = event.device + 1
 		if player_number == controller_num:
-			if Input.is_action_pressed("accelerate"):
+			if event.is_action_pressed("accelerate"):
 				accelerating = true
 				breaking = false
-				acceleration = Input.get_action_strength("accelerate")
-			elif Input.is_action_pressed("break"):
+				acceleration = event.get_action_strength("accelerate")
+			elif event.is_action_pressed("break"):
 				accelerating = true
 				breaking = true
-				acceleration = Input.get_action_strength("break")
-			elif Input.is_action_just_released("accelerate") || Input.is_action_just_released("break"):
+				acceleration = event.get_action_strength("break")
+			elif event.is_action_released("accelerate") || event.is_action_released("break"):
 				accelerating = false
 				breaking = false
 				velocity = Vector3.ZERO
-			if Input.is_action_pressed("left"):
-				turn = turn_rate * Input.get_action_strength("left")
-			elif Input.is_action_pressed("right"):
-				turn = -turn_rate * Input.get_action_strength("right")
 			else:
+				pass
+			if event.is_action_pressed("left"):
+				turn = turn_rate * event.get_action_strength("left")
+			elif event.is_action_pressed("right"):
+				turn = -turn_rate * event.get_action_strength("right")
+			elif event.is_action_released("left") || event.is_action_released("right"):
 				turn = 0
-			#Pivot camera
-			if Input.is_action_pressed("pivot_left"):
-				cam_pivot.rotation_degrees.y = 180 * Input.get_action_strength("pivot_left")
-			elif Input.is_action_pressed("pivot_right"):
-				cam_pivot.rotation_degrees.y = -180 * Input.get_action_strength("pivot_right")
 			else:
+				pass
+			#Pivot camera
+			if event.is_action_pressed("pivot_left"):
+				cam_pivot.rotation_degrees.y = 180 * event.get_action_strength("pivot_left")
+			elif event.is_action_pressed("pivot_right"):
+				cam_pivot.rotation_degrees.y = -180 * event.get_action_strength("pivot_right")
+			elif event.is_action_released("pivot_left") || event.is_action_released("pivot_right"):
 				cam_pivot.rotation_degrees.y = 0
+			else:
+				pass
 
 func _physics_process(delta: float) -> void:
 	#Rotate
-	if velocity.length() != 0:
+	if accelerating || breaking:
 		if breaking:
 			global_rotation.y += -turn * delta
 		else:
+			#print("Turning " + str(delta * turn))
 			global_rotation.y += turn * delta
-	if accelerating == true:
+	#Add speed to the kart
+	if accelerating:
 		velocity.z = speed
 		if off_road:
 			velocity.z = velocity.z * 0.5

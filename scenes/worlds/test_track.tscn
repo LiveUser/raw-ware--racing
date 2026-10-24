@@ -234,7 +234,6 @@ render_target_update_mode = 4
 
 [node name="Kart-02" parent="CanvasLayer/HBoxContainer/SubViewportContainer2/SubViewport" unique_id=570448489 instance=ExtResource("3_m56an")]
 transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0, 0, -0.15670428)
-player_number = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2131211883]
 environment = SubResource("Environment_tfvwa")

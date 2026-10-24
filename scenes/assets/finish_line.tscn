@@ -31,6 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0037841797, 0.35357666, 0)
 shape = SubResource("BoxShape3D_tfvwa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1731482684]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=971474771]
 offset_right = 1920.0

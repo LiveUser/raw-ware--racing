@@ -14,3 +14,12 @@ func body_entered(body:Node3D)->void:
 		canvas.visible = true
 		game_over = true
 		text.text = "Player " + str((body as Kart).player_number) + " Won"
+func _input(event: InputEvent) -> void:
+	var controller_num:int = event.device + 1
+	if controller_num == 1 && event.is_action_pressed("confirm") && game_over:
+		get_tree().reload_current_scene()
+	elif controller_num == 1 && event.is_action_pressed("back") && game_over:
+		#TODO: Load start screen
+		pass
+	else:
+		pass

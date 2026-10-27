@@ -3,13 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://ffgs6h651fl4" path="res://scenes/assets/road.tscn" id="1_bqshv"]
 [ext_resource type="PackedScene" uid="uid://dlk33lhsduceu" path="res://scenes/assets/road_curve.tscn" id="2_3p5nl"]
 [ext_resource type="PackedScene" uid="uid://cjrxivd751vg8" path="res://scenes/players/kart_01.tscn" id="2_tkvih"]
+[ext_resource type="PackedScene" uid="uid://72isv0i6ng72" path="res://scenes/assets/boost.tscn" id="3_116w5"]
 [ext_resource type="PackedScene" uid="uid://pf7mix6u60eg" path="res://scenes/players/kart_02.tscn" id="3_m56an"]
 [ext_resource type="PackedScene" uid="uid://r1543cfltwbj" path="res://scenes/assets/block_grass_overhang_large_tall.tscn" id="4_m56an"]
 [ext_resource type="PackedScene" uid="uid://cjofjl8cscet8" path="res://scenes/assets/fence_straight.tscn" id="5_mhlqd"]
 [ext_resource type="PackedScene" uid="uid://bil7l7ctnb4ec" path="res://scenes/assets/fence_corner.tscn" id="6_3p5nl"]
+[ext_resource type="PackedScene" uid="uid://xtakoj6xmbac" path="res://scenes/assets/arrow.tscn" id="8_6138e"]
 [ext_resource type="PackedScene" uid="uid://cukr12g1pbrv2" path="res://scenes/assets/finish_line.tscn" id="8_wadds"]
 [ext_resource type="Script" uid="uid://bb5egwwpdfvjp" path="res://scripts/2d_audio_loop.gd" id="9_10wkl"]
 [ext_resource type="AudioStream" uid="uid://bli0r3bi8lgrb" path="res://music/Turbo Circuit.mp3" id="9_ssadi"]
+[ext_resource type="PackedScene" uid="uid://b7x8s71gpb6f1" path="res://scenes/assets/trap_spikes.tscn" id="10_0fifs"]
 
 [sub_resource type="Environment" id="Environment_tfvwa"]
 background_mode = 1
@@ -977,6 +980,36 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -8, 
 
 [node name="fence-corner2" parent="Environment" unique_id=1008145648 instance=ExtResource("6_3p5nl")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, -1)
+
+[node name="arrow" parent="Environment" unique_id=1432419861 instance=ExtResource("8_6138e")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -1)
+
+[node name="arrow2" parent="Environment" unique_id=730639331 instance=ExtResource("8_6138e")]
+transform = Transform3D(-8.940697e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -8.940697e-08, -6, 0, 1)
+
+[node name="arrow3" parent="Environment" unique_id=1120617309 instance=ExtResource("8_6138e")]
+transform = Transform3D(-0.9999999, 0, 1.3311833e-07, 0, 1, 0, -1.3311833e-07, 0, -0.9999999, -9, 0, 4)
+
+[node name="arrow6" parent="Environment" unique_id=1651267026 instance=ExtResource("8_6138e")]
+transform = Transform3D(-0.9999999, 0, 1.3311833e-07, 0, 1, 0, -1.3311833e-07, 0, -0.9999999, -13, 0, 11)
+
+[node name="arrow4" parent="Environment" unique_id=1076272957 instance=ExtResource("8_6138e")]
+transform = Transform3D(-8.940695e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -8.940695e-08, -15, 0, 6)
+
+[node name="arrow8" parent="Environment" unique_id=1272728013 instance=ExtResource("8_6138e")]
+transform = Transform3D(1.9841835e-09, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 1.9841835e-09, -18, 0, 8)
+
+[node name="arrow7" parent="Environment" unique_id=259609003 instance=ExtResource("8_6138e")]
+transform = Transform3D(-8.940695e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -8.940695e-08, -5, 0, 12)
+
+[node name="arrow5" parent="Environment" unique_id=1366333686 instance=ExtResource("8_6138e")]
+transform = Transform3D(0.9999999, 0, -4.5695568e-08, 0, 1, 0, 4.5695568e-08, 0, 0.9999999, -11, 0, 8)
+
+[node name="Boost" parent="Environment" unique_id=680378908 instance=ExtResource("3_116w5")]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, -10, -0.08002481, 10)
+
+[node name="trap-spikes" parent="Environment" unique_id=1992667857 instance=ExtResource("10_0fifs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 10)
 
 [node name="FinishLine" parent="." unique_id=1949874835 instance=ExtResource("8_wadds")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17, 0, 4)

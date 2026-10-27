@@ -13,6 +13,8 @@ var breaking:bool = false
 var accelerating:bool = false
 var acceleration:float = 0
 var off_road:bool = false
+var boost_time_remaining:float = 0
+var slow_down_time:float = 0
 
 func _ready() -> void:
 	kart_area.body_entered.connect(on_body_entered)
@@ -72,6 +74,16 @@ func _physics_process(delta: float) -> void:
 		velocity.z = speed
 		if off_road:
 			velocity.z = velocity.z * 0.5
+		if 0 < boost_time_remaining:
+			velocity.z = velocity.z * 2
+			boost_time_remaining -= delta
+			if boost_time_remaining < 0:
+				boost_time_remaining = 0
+		if 0 < slow_down_time:
+			velocity.z = velocity.z * 0.26
+			slow_down_time -= delta
+			if slow_down_time < 0:
+				slow_down_time = 0
 	else:
 		velocity.z = 0
 		velocity.x = 0

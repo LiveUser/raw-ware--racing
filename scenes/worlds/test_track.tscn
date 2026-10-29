@@ -17,6 +17,8 @@
 [sub_resource type="Environment" id="Environment_tfvwa"]
 background_mode = 1
 background_color = Color(1, 1, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="TestTrack" type="Node3D" unique_id=1229464709]
 
@@ -240,6 +242,11 @@ transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.092784
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2131211883]
 environment = SubResource("Environment_tfvwa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1669688311]
+transform = Transform3D(0.9891656, 0.10745581, 0.10002273, -0.02869463, -0.52667224, 0.8495842, 0.14397193, -0.84324956, -0.5178826, 0, 3.555527, 0)
+light_energy = 1.5
+shadow_enabled = true
 
 [node name="Environment" type="Node3D" parent="." unique_id=1231699286]
 

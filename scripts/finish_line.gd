@@ -19,7 +19,7 @@ func _input(event: InputEvent) -> void:
 	if controller_num == 1 && event.is_action_pressed("confirm") && game_over:
 		get_tree().reload_current_scene()
 	elif controller_num == 1 && event.is_action_pressed("back") && game_over:
-		#TODO: Load start screen
-		pass
+		var level = load("res://scenes/worlds/lobby.tscn")
+		get_tree().change_scene_to_packed(level)
 	else:
 		pass
